@@ -2,6 +2,7 @@
 const app = new Vue ({
     el : '#root',
     data: {
+        activeIndex: 0,
         arrSlides: [
             {
                 title:'Svezia',
@@ -33,7 +34,23 @@ const app = new Vue ({
                 image:'img/05.jpg',
             },
         ],
-    }
+    },
+    methods: {
+        next() {
+            if (this.activeIndex == this.arrSlides.length - 1) {
+                this.activeIndex = 0;
+            } else {
+                this.activeIndex++;
+            }
+        },
+        previous() {
+            if (this.activeIndex == 0) {
+                this.activeIndex = this.arrSlides.length - 1;
+            } else {
+                this.activeIndex--;
+            }
+        },
+    },
 });
 
 console.log(app);
