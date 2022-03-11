@@ -50,7 +50,16 @@ const app = new Vue ({
                 this.activeIndex--;
             }
         },
+
+        ogniTreSecondi() {
+            setInterval(this.next, 300);
+        }
     },
+
+    mounted () {
+        this.ogniTreSecondi()
+    }
+        
 });
 
 console.log(app);
